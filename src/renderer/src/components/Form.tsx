@@ -21,7 +21,7 @@ function Form({ setTarefas, tarefas }: FormProps): ReactElement {
   return (
     <>
       <label>Nome da Tarefa</label>
-      <Input variant="bordered" type="text" onChange={(e) => setTarefa(e.target.value)} name="title" />
+      <Input variant="bordered" type="text" placeholder="Digite o nome da tarefa" isClearable onChange={(e) => setTarefa(e.target.value)} name="title" />
       <Button color="primary" onClick={() => addTarefa()}>Salvar tarefa</Button>
     </>
   )
