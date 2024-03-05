@@ -1,3 +1,4 @@
+import { Button, Card } from '@nextui-org/react'
 import { Task } from '@renderer/Task'
 import { ReactElement } from 'react'
 
@@ -10,17 +11,15 @@ function List({ tarefas }: ListProps): ReactElement {
     <>
       <h3>Lista de tarefas</h3>
 
-      <ul>
         {tarefas.length > 0 &&
           tarefas.map((tarefa) => (
-            <li key={tarefa.title}>
+            <Card key={tarefa.title}>
               <strong>{tarefa.title}</strong>
-              <button>excluir</button>
-              <button>editar</button>
-              <button>completar</button>
-            </li>
+              <Button isIconOnly color="danger">excluir</Button>
+              <Button isIconOnly color="primary">editar</Button>
+              <Button isIconOnly color="success">completar</Button>
+            </Card>
           ))}
-      </ul>
     </>
   )
 }
